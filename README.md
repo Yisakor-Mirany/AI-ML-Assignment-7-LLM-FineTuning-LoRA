@@ -5,7 +5,7 @@ Model: distilbert-base-uncased
 PEFT Method: LoRA (Low-Rank Adaptation)
 Dataset: IMDB (Sentiment Analysis)
 
-🔍 Summary
+# 🔍 Summary
 
 This project applies Parameter-Efficient Fine-Tuning (PEFT) using LoRA to fine-tune a pre-trained LLM (DistilBERT) for a binary sentiment classification task on the IMDB movie reviews dataset.
 
@@ -25,7 +25,7 @@ Evaluates model performance on Accuracy and F1
 
 Saves final LoRA-enabled sentiment classifier
 
-📦 Project Components
+# 📦 Project Components
 
 notebook.ipynb – Full workflow (data prep → LoRA setup → training → evaluation)
 
@@ -35,25 +35,28 @@ README.md – Documentation
 
 Saved Model Folder (optional) – Final LoRA-tuned DistilBERT model
 
-📘 Model & LoRA Configuration
+# 📘 Model & LoRA Configuration
 
-Base Model: distilbert-base-uncased
+Base Model:** distilbert-base-uncased**
 Task: Sentiment classification
 Classes:
 
-0 → Negative
+- 0 → Negative
 
-1 → Positive
+- 1 → Positive
 
 LoRA Settings:
 
-Parameter	Value
-r	8
-lora_alpha	16
-lora_dropout	0.1
-Target	Query & Value projections
-PEFT Task Type	Sequence Classification
-📊 Training Details
+| Parameter      | Value                     |
+| -------------- | ------------------------- |
+| r              | 8                         |
+| lora_alpha     | 16                        |
+| lora_dropout   | 0.1                       |
+| Target         | Query & Value projections |
+| PEFT Task Type | Sequence Classification   |
+
+
+# 📊 Training Details
 
 Epochs: 3
 
@@ -67,7 +70,7 @@ Training Strategy: Evaluation + checkpoint each epoch
 
 The notebook includes the complete training loop using Hugging Face Trainer.
 
-🧪 Evaluation Metrics
+# 🧪 Evaluation Metrics
 
 After training, the model is evaluated on the IMDB test set.
 
@@ -77,7 +80,8 @@ F1 Score	(Insert your final score here)
 
 These scores typically reach ~90–93% with LoRA on DistilBERT.
 
-⚖️ Baseline vs Fine-Tuned Comparison
+# ⚖️ Baseline vs Fine-Tuned Comparison
+
 Baseline (zero-shot DistilBERT):
 
 Accuracy: ~50–60%
@@ -96,7 +100,7 @@ Learns sentiment cues effectively
 
 Only trains a tiny subset of parameters
 
-⚡ Why LoRA Is Efficient
+# ⚡ Why LoRA Is Efficient
 
 LoRA dramatically reduces the cost of fine-tuning by:
 
