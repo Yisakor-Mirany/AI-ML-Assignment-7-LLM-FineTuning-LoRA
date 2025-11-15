@@ -115,3 +115,12 @@ Reducing GPU memory requirements
 Speeding up training without losing accuracy
 
 This makes it ideal for student environments, Colab GPUs, and real-world low-resource scenarios.
+
+
+def predict(sentence):
+    inputs = tokenizer(sentence, return_tensors="pt", truncation=True, padding=True)
+    outputs = model(**inputs)
+    pred = torch.argmax(outputs.logits, dim=1).item()
+    return "Positive" if pred == 1 else "Negative"
+
+predict("This movie was amazing!")
