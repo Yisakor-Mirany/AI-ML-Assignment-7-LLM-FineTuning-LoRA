@@ -116,6 +116,7 @@ Speeding up training without losing accuracy
 
 This makes it ideal for student environments, Colab GPUs, and real-world low-resource scenarios.
 
+# 📝 Inference Example
 
 def predict(sentence):
     inputs = tokenizer(sentence, return_tensors="pt", truncation=True, padding=True)
